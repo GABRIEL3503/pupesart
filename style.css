@@ -818,7 +818,7 @@ h4 {
 }
 
 .footer-img {
-  width: 440px;
+  width: 120px;
 }
 
 .contact-form h2 {
@@ -911,7 +911,7 @@ form p {
 }
 
 #footer {
-  background-color: #8027E0;
+  background-color: #292929;
   padding: 60px 100px;
 }
 
@@ -1247,7 +1247,7 @@ form p {
 
 @media (max-width: 768px) {
   .footer-img{
-    width: 400px;
+    width: 120px;
   }
   .contact-form .half-width input{
     width: auto;
