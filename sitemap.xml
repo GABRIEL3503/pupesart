@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://gestioneslimay.com.ar/</loc>
+      <priority>1.00</priority>
+   </url>
+   <url>
+      <loc>https://gestioneslimay.com.ar/#nosotros</loc>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://gestioneslimay.com.ar/#servicios</loc>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://gestioneslimay.com.ar/#formulario-contacto</loc>
+      <priority>0.80</priority>
+   </url>
+   <!-- Añade más URLs según sea necesario -->
+</urlset>

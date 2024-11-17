@@ -1,0 +1,1229 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    position: relative; 
+    margin: 0;
+}
+
+:root {
+    /* Definición de colores */
+    --color-principal: rgb(9 12 87); /* Azul */
+    --color-secundario: #6c757d; /* Gris */
+    --color-terciario: #28a745; /* Verde */
+}
+
+/* navbar */
+
+
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  margin: 40px 26px;
+  }
+  
+  .navbar-logo img {
+    width: 280px;
+  }
+ 
+  .navbar-links {
+    /* padding-right: 55px; */
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+  }
+
+  .navbar-links a {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 22.5px;
+    align-items: center;
+  }
+
+  .navbar-links a:hover {
+    text-decoration: underline;
+  }
+
+  .navbar-toggle {
+    display: none; 
+  }
+  
+   @media (max-width: 768px) {
+    .navbar{
+      position: absolute;
+      width: 88%;
+      display: flex;
+      justify-content: space-between;
+      background-color: transparent!important;
+    }
+    .navbar-links {
+      padding-right: 0;
+      border-left: 1px solid #959595;
+      align-items: center;
+      display: flex; 
+      flex-direction: column;
+      justify-content: start;
+      position: fixed;
+      top: 0;
+      right: -100%; 
+      height: 100vh; 
+      width: 250px; 
+      background-color: rgb(252, 252, 252);
+      transition: right 0.5s cubic-bezier(0.4, 0, 1, 1);
+    }
+    .navbar-links.active {
+      right: 0; /* Muestra el menú deslizándolo desde la derecha */
+    }   
+    .navbar-links.active.navbar-links a {
+   color:rgb(9 12 87) ; }
+   .navbar-links.active.navbar-links .service-margen {
+    margin-left: -4px; }
+ 
+    .navbar-logo img {
+    width: 240px;
+   }
+
+   .active.navbar-toggle .bar {
+    background-color:rgb(9 12 87) ;
+   }
+    .navbar-toggle {
+      display: block; /* Mostrar el botón del menú hamburguesa en pantallas pequeñas */
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+    }
+    .toggle-icon::before,
+    .toggle-icon::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 3px; /* Cambiar la altura a 3px para tener tres líneas */
+     
+      margin: 4px 0; /* Ajustar el margen para centrar las líneas verticalmente */
+      transition: right 0.5s cubic-bezier(0.4, 0, 1, 1);
+    }
+    
+    .toggle-icon::before {
+      transform: translateY(-8px);
+    }
+  
+    .toggle-icon::after {
+      transform: translateY(5px);
+    }
+  
+    /* Estilo del botón del menú hamburguesa al estar activo */
+    .navbar-toggle.active .toggle-icon::before {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    .navbar-toggle.active .toggle-icon::after {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .container-link {
+      display: flex;
+      flex-direction: column;
+      margin-top: 170px;
+    }
+  }
+  .pupe-img img{
+    left: 0;
+    bottom: 73px;
+    width: 480px;
+    position: absolute;
+  }
+  .navbar .active{
+    gap: 22px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar-toggle .bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+  } 
+  /* Ajuste para la animación de transformación en el menú activo */
+  .navbar-toggle.active .toggle-icon .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .navbar-toggle.active .toggle-icon .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .navbar-toggle.active .toggle-icon .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* hero-image */
+  .hero-image {
+    flex-wrap: wrap;
+    margin-top: -22px;
+    width: auto;
+    position: relative;
+    background-image: url('./img/Nav-Hero.png');
+    height: 88vh; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: 120%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    justify-content: flex-end;
+  }
+  
+  /* .hero-image::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+  } */
+   /* Estilos para el texto del hero */
+  .hero-image .hero-text {
+    display: flex;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 222;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .pupe-name{
+    width: 240px;
+  }
+  /* Estilos para los botones */ 
+  .hero-image  {
+   
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #007bff;
+    background-color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .h1único {
+    color: #1a1a1a;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    margin: 10px 0;
+    white-space: pre-line;
+  }
+  .button1 a{
+    color:#8027E0!important ;
+  }
+  .sobremi-img{
+    width: 380px;
+  }
+  
+  .button1 {
+    color: #8027E0!important;
+    border-radius: 8px;
+    background-color:  white;
+    border: none;
+    padding: 12px 140px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total del botón */
+    display: flex; 
+    margin: 0 auto 0;
+  }
+  
+  .button1:hover {
+  background-color: #020D37;
+  }
+
+  /* .hero-image::before {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#020d3775;
+    z-index: 1; 
+  } */
+
+  .button2{
+    color: white;
+    margin-top: 14px;
+    border: none;
+    padding: 14px 24px;
+    background-color: transparent;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    max-width: 155px; /* Establece el ancho máximo que deseas para el botón */
+    padding: 10px; /* Ajusta el relleno según tus preferencias */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total del botón */
+    display: flex; 
+    margin: 12px auto 0;
+  }
+
+  .button2:hover {
+    text-decoration: underline;
+  }
+
+/* galeria */
+
+#gallery{
+  padding: 34px;
+
+}
+/* Configuración de la galería */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 10px;
+}
+
+
+/* Estilos básicos para las imágenes */
+.item {
+  position: relative;
+  opacity: 0; /* Comienza oculta */
+  transform: scale(0.95); /* Comienza ligeramente más pequeña */
+  transition: opacity 0.7s ease, transform 0.7s ease; /* Transición suave */
+  visibility: hidden; /* Oculta sin alterar el flujo de la galería */
+}
+
+.item.show {
+  opacity: 1; /* Totalmente visible */
+  transform: scale(1); /* Tamaño normal */
+  visibility: visible; /* Mostrar con transición */
+}
+
+/* Ajustes específicos para las tarjetas altas */
+.item.tall {
+  grid-row: span 2;
+}
+
+/* Estilos de las imágenes */
+.item img {
+  border-radius: 28px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Descripción interna de las tarjetas */
+.gdesc-inner {
+  width: 30%;
+  font-size: 21px;
+  color: white;
+  background-color: black;
+  margin-top: -168px;
+}
+
+/* Ajustes de estilo específicos para GLightbox */
+.glightbox-clean .gslide-description {
+  background-color: transparent;
+}
+
+.glightbox-clean .gslide-title {
+  font-size: 1em;
+  font-weight: 900;
+  font-family: Arial, sans-serif;
+  color: #ffffff !important;
+  margin-bottom: 19px;
+  line-height: 1.4em;
+}
+
+.gslide-desc {
+  margin-bottom: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.4em;
+}
+
+/* Contenedor de botones de filtro */
+.filter-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-container button {
+  color: #AF45A7;
+  border: none;
+  background: none;
+  font-size: 18px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: font-weight 0.3s;
+}
+
+.filter-container button.active {
+  font-weight: 700;
+}
+/* CSS para animación visible en la galería */
+.gallery .item {
+  opacity: 0; /* Comienza completamente transparente */
+  transform: scale(0.8); /* Comienza mucho más pequeña */
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1); /* Transiciones más largas y visibles */
+  visibility: hidden; /* Oculta sin alterar el flujo de la galería */
+}
+
+.gallery .item.show {
+  opacity: 1; /* Completamente visible */
+  transform: scale(1); /* Tamaño normal */
+  visibility: visible; /* Mostrar con transición */
+}
+     
+.gallery .item {
+  display: none;
+}
+.gallery .item.show {
+  display: block;
+}
+
+  /* Sección Nuestros Servicios */
+
+.nuestros-servicios {
+  background-color: #fff; /* o el color de fondo deseado */
+  color: #333; /* Color del texto */
+}
+
+.nuestros-servicios-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nuestros-servicios-texto {
+  flex-basis: 100%; /* Ocupa el ancho completo en móviles */
+  flex: 1; /* Ocupa el espacio disponible */
+}
+h4{
+  text-decoration: none!important;
+}
+.titulo-nuestros-servicios {
+  text-decoration: none!important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 58px;
+  letter-spacing: 0.5px;
+  color: #8027E0; /* Color del título */
+  margin: 16px
+}
+
+.subtitulo-nuestros-servicios {
+  color: #8027E0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: -2;
+  margin: 24px 36px 56px 16px;
+}
+
+.nuestros-servicios-caracteristicas {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+
+.caracteristica-servicio {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  flex-basis: calc(100% - 1rem); /* Ajusta para 1 tarjeta por fila en móviles */
+  max-width: calc(100% - 1rem); /* Asegura que no excedan el 100% del ancho */
+}
+
+.icono-caracteristica-servicio {
+  display: flex;
+    margin-bottom: 54px;
+    margin-right: 108px;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+  font-size: 2rem; /* Ajusta el tamaño del ícono */
+  margin-bottom: 52px;
+}
+
+#nosotros .titulo-cualidad-servicio{
+  margin: 32px 0 0 0;
+}
+
+.titulo-cualidad-servicio {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.parrafo-cualidades-servicios {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+
+  .nuestros-servicios-container {
+    flex-wrap: nowrap;
+  }
+
+  .nuestros-servicios-texto {
+    flex-basis: 50%; /* Ajusta al 50% del ancho para el texto en escritorio */
+    max-width: 50%;
+  }
+
+  .nuestros-servicios-caracteristicas {
+    justify-content: center;
+  
+  }
+
+  .caracteristica-servicio {
+    flex-basis: calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+
+  .texto-sobre-transparencia br {
+    display: none; /* Oculta la etiqueta <br> en pantalla grande*/
+  }
+}
+
+@media (min-width: 960px) {
+
+  .h1único br {
+    display: none; /* Oculta la etiqueta <br> en pantalla grande*/
+  }
+
+  .subtitulo-contacto br{
+    display: none;
+  }
+}
+
+/* Estilos para botón de transición de Nuestros Servicios */
+.btn-toggle-servicios {
+  cursor: pointer;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-top: 48px;
+  background-color: #0432DF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s; /* Transición suave al cambiar de color */
+}
+
+.btn-toggle-servicios:hover {
+  background-color: #F59E00;
+}
+
+/* Estilos para las características secundarias de Nuestros Servicios */
+.serviciosAdicionales {
+  display: none; /* Ocultar inicialmente las características secundarias */
+  overflow: hidden; /* Asegurarse de que el contenido extra no se muestre */
+  transition: max-height 0.5s ease-out; /* Transición suave al expandir */
+  max-height: 0; /* Iniciar con altura máxima de 0 */
+}
+
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('./img/image.webp');/* Cambia esto por la ruta real de la imagen */
+  height: 300px; /* Ajusta a la altura deseada */
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #020d3745;
+  z-index: 1;
+}
+
+.parallax-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Asegúrate de que el contenedor y su contenido estén sobre la capa azul */
+}
+
+.parallax-content h5 {
+  color: white;
+  text-align: center;
+  font-size: 2rem; /*qué onda ésto? */
+  margin: 0;
+  padding: 1rem;
+  z-index: 2; /* Asegúrate de que el texto esté sobre la capa azul */
+}
+
+.texto-sobre-transparencia{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4px;
+  letter-spacing: 0;
+  white-space: pre-line;
+}
+
+#servicios .caracteristica-servicio {
+    text-align: center;
+    background-color: #ffffff;
+    width: fit-content;
+    margin: 16px;
+    border:  1px solid #00000042;
+    border-radius: 25px;
+    display: flex;
+    border-radius: 8px;
+    height: 100px;
+    padding: 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#servicios .nuestros-servicios-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#servicios .nuestros-servicios-texto {
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nuestros-servicios-cards {
+  flex: 1 0 100%; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#servicios .parrafo-cualidades-servicios {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  padding: 4px 18px;
+}
+
+@media (min-width: 768px) {
+
+  #servicios  .nuestros-servicios-texto {
+    flex: 2; 
+    margin-right: 10px;
+    max-width: 33%;
+    min-height: 0; 
+    justify-content: flex-start; 
+  }
+
+  #servicios  .nuestros-servicios-cards {
+    flex: 3; 
+  }
+
+  #servicios  .caracteristica-servicio {
+    padding: 0.5rem;
+    flex-basis: calc(55% - 1rem);
+    max-width: calc(45% - 1rem);
+  }
+  
+} 
+
+#servicios2 {
+ 
+ justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+
+#servicios2 .caracteristica-servicio{
+  padding: 0.5rem;
+    flex-basis: calc(30% - 1rem);
+    max-width: calc(35% - 1rem);
+}
+
+#serviciosAdicionales .caracteristica-servicio{
+  padding: 0.5rem;
+  flex-basis: calc(30% - 1rem);
+  max-width: calc(35% - 1rem);
+}
+
+}
+
+.containerbuton{
+  display: flex;
+  justify-content: center;
+}
+
+#form .contact-form{
+  max-width: 1044px;
+  width: 100%;
+}
+
+#form .subtitulo-contacto{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 42px;
+    letter-spacing: 0;
+    white-space: pre-line;
+}
+
+#form .cuadro-correo-consulta{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('img/contact-image.jpg') center center no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #020d3745;
+  z-index: 1;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  padding: 1rem;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.contact-form .half-width {
+  display: flex;
+  width: 100%;
+}
+
+.contact-form .half-width input {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.contact-form .half-width input:last-child {
+  margin-right: 0;
+}
+
+.contact-form button {
+  color: white;
+  border-radius: 8px;
+  background-color:  #0432DF;
+  border: none;
+  padding: 12px 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0;
+  width: 200px;
+  max-width: 200px; /* Establece el ancho máximo que deseas para el botón */
+  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total del botón */
+  display: flex; 
+  margin: 24px auto 0;
+  justify-content: center;
+}
+
+.contact-form button:hover{
+  background-color:  #020D37;
+}
+
+form .nuestros-servicios-texto {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+form p {
+  color: #ffffff
+}
+
+#formulario-contacto{
+  margin-top: 33px;
+}
+
+  /* Estilo por defecto para los íconos: ocultos */
+.navbar-links .icono-navbar {
+  display: none;
+}
+
+/* Cuando navbar-links tiene la clase navbar-active, los íconos se muestran */
+.navbar-links.active .icono-navbar {
+  display: inline-block; /* O puedes usar "block" según tu diseño */
+  margin-right: 8px; /* Añade un pequeño margen para separar el ícono del texto */
+}
+
+.mano{
+  width: 30px;
+}
+
+#footer{
+  background-color: #8027E0;
+  padding: 60px 100px;
+}
+
+.footer-section{
+  margin-bottom: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.footer-links{
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 12px;
+}
+
+.footer-links a{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.phone-footer{
+  display: flex;
+  align-items: cent;
+}
+
+.email-footer{
+  display: flex;
+  align-items: flex-end;
+}
+
+.phone-footer-icon{
+  width: 22px;
+  margin-right: 10px;
+}
+
+.email-footer-icon{
+  width: 20px;
+  margin-right: 10px;
+}
+
+.social-links{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.social-links p{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+#footer .social-links p{
+  margin: 0px;
+}
+
+.logo-slogan-footer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-slogan-footer a img{
+  width: 260px;
+}
+
+.instagram-footer{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.pie{
+  color: #f1f1f1;
+  border-top: 1px solid #ccc;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 24px;
+}
+
+.desarrollado-por{
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desarrollado-por a{
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+  text-decoration: none;
+}
+
+.whatsapp-button {
+  position: fixed; 
+  bottom: 5px; 
+  right: 2px;  
+  z-index: 1000; 
+}
+
+.whatsapp-button a{
+   text-decoration: none;
+}
+
+.whatsapp-content {
+/* background-color: #3dc14e;  */
+  padding: 4px 13px;
+  border-radius: 20px; 
+  display: flex; 
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.whatsapp-icon {
+  width: 56px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9; /* Asegúrate de que esté detrás del menú hamburguesa pero encima del contenido principal */
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+#nosotros svg{
+  width: 56px;
+}
+
+#nosotros{
+  margin: 140px 100px;
+}
+  
+.copyright{
+color: #ffffff;
+font-family: "Poppins", sans-serif;
+font-weight: 300;
+font-size: 14px;
+letter-spacing: 0.5px;
+}
+  
+.logo-instagram{
+  width: 42px;
+  margin-left: 4px;
+}
+  
+.slogan{
+  color:#fff;
+}
+
+.hero-text a{
+  color: white;
+ text-decoration: none;
+}
+
+.parallax-section ,#servicios {
+  margin: 140px 100px;
+
+}
+
+@media (max-width: 768px) {
+
+  #servicios,  #nosotros {
+    margin: 120px 32px!important;
+  }
+
+  .parallax-content h5 {
+    font-size: 1.5rem!important; /* Tamaño del texto más pequeño para pantallas más pequeñas */
+  }
+  
+  .h1único {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 100px 0;
+    letter-spacing: 0.5px;
+  } 
+
+  
+  .button2 {
+    font-size: 14px;
+    max-width: 140px;
+  }
+  
+  #nosotros .titulo-cualidad-servicio{
+    margin: 28px 0 0 0;
+  }
+
+  .titulo-nuestros-servicios {
+    font-size: 48px;
+  }
+
+  .texto-sobre-transparencia{
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  }
+  
+  .parallax-section{
+    margin: 0;
+  }
+
+  #form{
+    margin: 72px 32px
+  }
+
+  #form .subtitulo-contacto{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .whatsapp-icon {
+    width: 40px;
+  }
+
+  #footer{
+    width: auto;
+    padding: 72px 32px;
+  }
+
+  .instagram-footer{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-section{
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+ }
+ 
+  .logo-slogan-footer a img{
+   width: 260px;
+   margin-bottom: 40px;
+ }
+
+  .footer-links{
+   flex-wrap: wrap;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 0px;
+   margin-bottom: 40px;
+ }
+
+  .footer-links a{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+  .phone-footer{
+    margin-bottom: 4px;
+  }
+
+  .desarrollado-por{
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .desarrollado-por a{
+    margin: 0px;
+  }
+
+  .pie{
+    border-top: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 56px;
+  }
+}
+.pupe-img img {
+  width: 620px;
+  bottom: 0;}
+@media (max-width: 768px) {
+  .hero-image {justify-content: center};
+  .pupe-img img{
+    position: relative;
+  }
+  .h1único {
+    margin: 20px 0px;
+  }
+  .pupe-img img {
+    width: 400px;
+    bottom: 0;}
+  .hero-image .hero-text {
+    display: flex;
+    margin-top: -588px;}
+  
+  .titulo-cualidad-servicio {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+
+  .parrafo-cualidades-servicios {
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+  
+  .contact-form .half-width input {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .contact-form .half-width {
+    flex-direction: column;
+  }
+  .hero-image {
+    background-size: auto;
+  }
+}
+
+#servicios .caracteristica-servicio {
+  cursor: pointer; /* Cambia el cursor a una mano para indicar clickeabilidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la transición del efecto */
+}
+
+#servicios .caracteristica-servicio:hover {
+  color: #F59E00;
+  transform: scale(1.05); /* Hace el elemento ligeramente más grande */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para resaltar */
+}
+.email-footer-icon {
+  width: 20px;
+  margin-right: 10px;
+} 
+.phone-footer-icon {
+  width: 22px;
+  margin-right: 10px;
+}
+.email-footer-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+body {
+  text-decoration: none!important;
+}
+* {
+  text-decoration: none !important;
+}
