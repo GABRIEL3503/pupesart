@@ -723,14 +723,16 @@ h4{
 .contact-form-wrapper {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   height: 100vh;
-  background: url('img/contact-image.jpg') center center no-repeat;
+  background: url(img/contact-image.jpg) center center no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .contact-form-wrapper::before {
@@ -745,10 +747,13 @@ h4{
 }
 
 .contact-form {
+  width: 440px;
   position: relative;
   z-index: 2;
 }
-
+.footer-img{
+  width: 440px;
+}
 .contact-form h2 {
   text-align: center;
   margin-bottom: 1rem;
