@@ -2,16 +2,19 @@ html {
   scroll-behavior: smooth;
 }
 
-body{
-    position: relative; 
-    margin: 0;
+body {
+  position: relative;
+  margin: 0;
 }
 
 :root {
-    /* Definición de colores */
-    --color-principal: rgb(9 12 87); /* Azul */
-    --color-secundario: #6c757d; /* Gris */
-    --color-terciario: #28a745; /* Verde */
+  /* Definición de colores */
+  --color-principal: rgb(9 12 87);
+  /* Azul */
+  --color-secundario: #6c757d;
+  /* Gris */
+  --color-terciario: #28a745;
+  /* Verde */
 }
 
 /* navbar */
@@ -28,169 +31,184 @@ body{
   align-items: center;
   z-index: 1000;
   margin: 40px 26px;
+}
+
+.navbar-logo img {
+  width: 280px;
+}
+
+.navbar-links {
+  /* padding-right: 55px; */
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: 0.5px;
+}
+
+.navbar-links a {
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 22.5px;
+  align-items: center;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent !important;
   }
-  
-  .navbar-logo img {
-    width: 280px;
-  }
- 
+
   .navbar-links {
-    /* padding-right: 55px; */
-    display: flex;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 19px;
-    letter-spacing: 0.5px;
-  }
-
-  .navbar-links a {
-    display: flex;
-    color: #fff;
-    text-decoration: none;
-    padding: 0 22.5px;
+    padding-right: 0;
+    border-left: 1px solid #959595;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    background-color: rgb(252, 252, 252);
+    transition: right 0.5s cubic-bezier(0.4, 0, 1, 1);
   }
 
-  .navbar-links a:hover {
-    text-decoration: underline;
+  .navbar-links.active {
+    right: 0;
+    /* Muestra el menú deslizándolo desde la derecha */
+  }
+
+  .navbar-links.active.navbar-links a {
+    color: rgb(9 12 87);
+  }
+
+  .navbar-links.active.navbar-links .service-margen {
+    margin-left: -4px;
+  }
+
+  .navbar-logo img {
+    width: 240px;
+  }
+
+  .active.navbar-toggle .bar {
+    background-color: rgb(9 12 87);
   }
 
   .navbar-toggle {
-    display: none; 
-  }
-  
-   @media (max-width: 768px) {
-    .navbar{
-      position: absolute;
-      width: 88%;
-      display: flex;
-      justify-content: space-between;
-      background-color: transparent!important;
-    }
-    .navbar-links {
-      padding-right: 0;
-      border-left: 1px solid #959595;
-      align-items: center;
-      display: flex; 
-      flex-direction: column;
-      justify-content: start;
-      position: fixed;
-      top: 0;
-      right: -100%; 
-      height: 100vh; 
-      width: 250px; 
-      background-color: rgb(252, 252, 252);
-      transition: right 0.5s cubic-bezier(0.4, 0, 1, 1);
-    }
-    .navbar-links.active {
-      right: 0; /* Muestra el menú deslizándolo desde la derecha */
-    }   
-    .navbar-links.active.navbar-links a {
-   color:rgb(9 12 87) ; }
-   .navbar-links.active.navbar-links .service-margen {
-    margin-left: -4px; }
- 
-    .navbar-logo img {
-    width: 240px;
-   }
-
-   .active.navbar-toggle .bar {
-    background-color:rgb(9 12 87) ;
-   }
-    .navbar-toggle {
-      display: block; /* Mostrar el botón del menú hamburguesa en pantallas pequeñas */
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: white;
-      font-size: 1.5rem;
-    }
-    .toggle-icon::before,
-    .toggle-icon::after {
-      content: "";
-      display: block;
-      width: 24px;
-      height: 3px; /* Cambiar la altura a 3px para tener tres líneas */
-     
-      margin: 4px 0; /* Ajustar el margen para centrar las líneas verticalmente */
-      transition: right 0.5s cubic-bezier(0.4, 0, 1, 1);
-    }
-    
-    .toggle-icon::before {
-      transform: translateY(-8px);
-    }
-  
-    .toggle-icon::after {
-      transform: translateY(5px);
-    }
-  
-    /* Estilo del botón del menú hamburguesa al estar activo */
-    .navbar-toggle.active .toggle-icon::before {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-  
-    .navbar-toggle.active .toggle-icon::after {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .container-link {
-      display: flex;
-      flex-direction: column;
-      margin-top: 170px;
-    }
-  }
-  .pupe-img img{
-    left: 0;
-    bottom: 73px;
-    width: 480px;
-    position: absolute;
-  }
-  .navbar .active{
-    gap: 22px;
-    align-items: flex-start;
-    display: flex;
-    justify-content: center;
+    display: block;
+    /* Mostrar el botón del menú hamburguesa en pantallas pequeñas */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
   }
 
-  .navbar-toggle .bar {
+  .toggle-icon::before,
+  .toggle-icon::after {
+    content: "";
     display: block;
     width: 24px;
     height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: transform 0.3s ease;
-  } 
-  /* Ajuste para la animación de transformación en el menú activo */
-  .navbar-toggle.active .toggle-icon .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  
-  .navbar-toggle.active .toggle-icon .bar:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .navbar-toggle.active .toggle-icon .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    /* Cambiar la altura a 3px para tener tres líneas */
+
+    margin: 4px 0;
+    /* Ajustar el margen para centrar las líneas verticalmente */
+    transition: right 0.5s cubic-bezier(0.4, 0, 1, 1);
   }
 
-  /* hero-image */
-  .hero-image {
-    flex-wrap: wrap;
-    margin-top: -22px;
-    width: auto;
-    position: relative;
-    background-image: url('./img/Nav-Hero.png');
-    height: 88vh; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: 120%;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    justify-content: flex-end;
+  .toggle-icon::before {
+    transform: translateY(-8px);
   }
-  
-  /* .hero-image::before{
+
+  .toggle-icon::after {
+    transform: translateY(5px);
+  }
+
+  /* Estilo del botón del menú hamburguesa al estar activo */
+  .navbar-toggle.active .toggle-icon::before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .navbar-toggle.active .toggle-icon::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .container-link {
+    display: flex;
+    flex-direction: column;
+    margin-top: 170px;
+  }
+}
+
+.pupe-img img {
+  left: 0;
+  bottom: 73px;
+  width: 480px;
+  position: absolute;
+}
+
+.navbar .active {
+  gap: 22px;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: transform 0.3s ease;
+}
+
+/* Ajuste para la animación de transformación en el menú activo */
+.navbar-toggle.active .toggle-icon .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggle.active .toggle-icon .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active .toggle-icon .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* hero-image */
+.hero-image {
+  flex-wrap: wrap;
+  margin-top: -22px;
+  width: auto;
+  position: relative;
+  background-image: url('./img/Nav-Hero.png');
+  height: 88vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* .hero-image::before{
     content: "";
     position: absolute;
     top: 0;
@@ -200,68 +218,73 @@ body{
 
     z-index: 1;
   } */
-   /* Estilos para el texto del hero */
-  .hero-image .hero-text {
-    display: flex;
-    text-align: center;
-    color: white;
-    /* padding: 20px; */
-    z-index: 222;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .pupe-name{
-    width: 240px;
-  }
-  /* Estilos para los botones */ 
-  .hero-image  {
-   
-    display: flex;
-    cursor: pointer;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #007bff;
-    background-color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-  }
+/* Estilos para el texto del hero */
+.hero-image .hero-text {
+  display: flex;
+  text-align: center;
+  color: white;
+  /* padding: 20px; */
+  z-index: 222;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .h1único {
-    color: #1a1a1a;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 48px;
-    margin: 10px 0;
-    white-space: pre-line;
-  }
-  .button1 a{
-    color:#8027E0!important ;
-  }
-  .sobremi-img{
-    width: 380px;
-  }
-  
-  .button1 {
-    color: #8027E0!important;
-    border-radius: 8px;
-    background-color:  white;
-    border: none;
-    padding: 12px 140px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total del botón */
-    display: flex; 
-    margin: 0 auto 0;
-  }
-  
-  .button1:hover {
+.pupe-name {
+  width: 240px;
+}
+
+/* Estilos para los botones */
+.hero-image {
+
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #007bff;
+  background-color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.h1único {
+  color: #1a1a1a;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  margin: 10px 0;
+  white-space: pre-line;
+}
+
+.button1 a {
+  color: #8027E0 !important;
+}
+
+.sobremi-img {
+  width: 380px;
+}
+
+.button1 {
+  color: #8027E0 !important;
+  border-radius: 8px;
+  background-color: white;
+  border: none;
+  padding: 12px 140px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  /* Incluye el relleno y el borde en el ancho total del botón */
+  display: flex;
+  margin: 0 auto 0;
+}
+
+.button1:hover {
   background-color: #020D37;
-  }
+}
 
-  /* .hero-image::before {
+/* .hero-image::before {
     content: ""; 
     position: absolute;
     top: 0;
@@ -272,33 +295,37 @@ body{
     z-index: 1; 
   } */
 
-  .button2{
-    color: white;
-    margin-top: 14px;
-    border: none;
-    padding: 14px 24px;
-    background-color: transparent;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    max-width: 155px; /* Establece el ancho máximo que deseas para el botón */
-    padding: 10px; /* Ajusta el relleno según tus preferencias */
-    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total del botón */
-    display: flex; 
-    margin: 12px auto 0;
-  }
+.button2 {
+  color: white;
+  margin-top: 14px;
+  border: none;
+  padding: 14px 24px;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  max-width: 155px;
+  /* Establece el ancho máximo que deseas para el botón */
+  padding: 10px;
+  /* Ajusta el relleno según tus preferencias */
+  box-sizing: border-box;
+  /* Incluye el relleno y el borde en el ancho total del botón */
+  display: flex;
+  margin: 12px auto 0;
+}
 
-  .button2:hover {
-    text-decoration: underline;
-  }
+.button2:hover {
+  text-decoration: underline;
+}
 
 /* galeria */
 
-#gallery{
+#gallery {
   padding: 34px;
 
 }
+
 /* Configuración de la galería */
 .gallery {
   display: grid;
@@ -311,16 +338,23 @@ body{
 /* Estilos básicos para las imágenes */
 .item {
   position: relative;
-  opacity: 0; /* Comienza oculta */
-  transform: scale(0.95); /* Comienza ligeramente más pequeña */
-  transition: opacity 0.7s ease, transform 0.7s ease; /* Transición suave */
-  visibility: hidden; /* Oculta sin alterar el flujo de la galería */
+  opacity: 0;
+  /* Comienza oculta */
+  transform: scale(0.95);
+  /* Comienza ligeramente más pequeña */
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  /* Transición suave */
+  visibility: hidden;
+  /* Oculta sin alterar el flujo de la galería */
 }
 
 .item.show {
-  opacity: 1; /* Totalmente visible */
-  transform: scale(1); /* Tamaño normal */
-  visibility: visible; /* Mostrar con transición */
+  opacity: 1;
+  /* Totalmente visible */
+  transform: scale(1);
+  /* Tamaño normal */
+  visibility: visible;
+  /* Mostrar con transición */
 }
 
 /* Ajustes específicos para las tarjetas altas */
@@ -384,32 +418,43 @@ body{
 .filter-container button.active {
   font-weight: 700;
 }
+
 /* CSS para animación visible en la galería */
 .gallery .item {
-  opacity: 0; /* Comienza completamente transparente */
-  transform: scale(0.8); /* Comienza mucho más pequeña */
-  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1); /* Transiciones más largas y visibles */
-  visibility: hidden; /* Oculta sin alterar el flujo de la galería */
+  opacity: 0;
+  /* Comienza completamente transparente */
+  transform: scale(0.8);
+  /* Comienza mucho más pequeña */
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Transiciones más largas y visibles */
+  visibility: hidden;
+  /* Oculta sin alterar el flujo de la galería */
 }
 
 .gallery .item.show {
-  opacity: 1; /* Completamente visible */
-  transform: scale(1); /* Tamaño normal */
-  visibility: visible; /* Mostrar con transición */
+  opacity: 1;
+  /* Completamente visible */
+  transform: scale(1);
+  /* Tamaño normal */
+  visibility: visible;
+  /* Mostrar con transición */
 }
-     
+
 .gallery .item {
   display: none;
 }
+
 .gallery .item.show {
   display: block;
 }
 
-  /* Sección Nuestros Servicios */
+/* Sección Nuestros Servicios */
 
 .nuestros-servicios {
-  background-color: #fff; /* o el color de fondo deseado */
-  color: #333; /* Color del texto */
+  background-color: #fff;
+  /* o el color de fondo deseado */
+  color: #333;
+  /* Color del texto */
 }
 
 .nuestros-servicios-container {
@@ -418,20 +463,25 @@ body{
 }
 
 .nuestros-servicios-texto {
-  flex-basis: 100%; /* Ocupa el ancho completo en móviles */
-  flex: 1; /* Ocupa el espacio disponible */
+  flex-basis: 100%;
+  /* Ocupa el ancho completo en móviles */
+  flex: 1;
+  /* Ocupa el espacio disponible */
 }
-h4{
-  text-decoration: none!important;
+
+h4 {
+  text-decoration: none !important;
 }
+
 .titulo-nuestros-servicios {
-  text-decoration: none!important;
+  text-decoration: none !important;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 58px;
   letter-spacing: 0.5px;
-  color: #8027E0; /* Color del título */
+  color: #8027E0;
+  /* Color del título */
   margin: 16px
 }
 
@@ -458,22 +508,25 @@ h4{
   flex-direction: column;
   align-items: center;
   margin: 0.5rem;
-  flex-basis: calc(100% - 1rem); /* Ajusta para 1 tarjeta por fila en móviles */
-  max-width: calc(100% - 1rem); /* Asegura que no excedan el 100% del ancho */
+  flex-basis: calc(100% - 1rem);
+  /* Ajusta para 1 tarjeta por fila en móviles */
+  max-width: calc(100% - 1rem);
+  /* Asegura que no excedan el 100% del ancho */
 }
 
 .icono-caracteristica-servicio {
   display: flex;
-    margin-bottom: 54px;
-    margin-right: 108px;
-    flex-direction: column;
-    align-content: flex-start;
-    align-items: flex-start;
-  font-size: 2rem; /* Ajusta el tamaño del ícono */
+  margin-bottom: 54px;
+  margin-right: 108px;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  font-size: 2rem;
+  /* Ajusta el tamaño del ícono */
   margin-bottom: 52px;
 }
 
-#nosotros .titulo-cualidad-servicio{
+#nosotros .titulo-cualidad-servicio {
   margin: 32px 0 0 0;
 }
 
@@ -501,13 +554,14 @@ h4{
   }
 
   .nuestros-servicios-texto {
-    flex-basis: 50%; /* Ajusta al 50% del ancho para el texto en escritorio */
+    flex-basis: 50%;
+    /* Ajusta al 50% del ancho para el texto en escritorio */
     max-width: 50%;
   }
 
   .nuestros-servicios-caracteristicas {
     justify-content: center;
-  
+
   }
 
   .caracteristica-servicio {
@@ -516,17 +570,19 @@ h4{
   }
 
   .texto-sobre-transparencia br {
-    display: none; /* Oculta la etiqueta <br> en pantalla grande*/
+    display: none;
+    /* Oculta la etiqueta <br> en pantalla grande*/
   }
 }
 
 @media (min-width: 960px) {
 
   .h1único br {
-    display: none; /* Oculta la etiqueta <br> en pantalla grande*/
+    display: none;
+    /* Oculta la etiqueta <br> en pantalla grande*/
   }
 
-  .subtitulo-contacto br{
+  .subtitulo-contacto br {
     display: none;
   }
 }
@@ -544,7 +600,8 @@ h4{
   color: white;
   border: none;
   border-radius: 8px;
-  transition: background-color 0.3s; /* Transición suave al cambiar de color */
+  transition: background-color 0.3s;
+  /* Transición suave al cambiar de color */
 }
 
 .btn-toggle-servicios:hover {
@@ -553,10 +610,14 @@ h4{
 
 /* Estilos para las características secundarias de Nuestros Servicios */
 .serviciosAdicionales {
-  display: none; /* Ocultar inicialmente las características secundarias */
-  overflow: hidden; /* Asegurarse de que el contenido extra no se muestre */
-  transition: max-height 0.5s ease-out; /* Transición suave al expandir */
-  max-height: 0; /* Iniciar con altura máxima de 0 */
+  display: none;
+  /* Ocultar inicialmente las características secundarias */
+  overflow: hidden;
+  /* Asegurarse de que el contenido extra no se muestre */
+  transition: max-height 0.5s ease-out;
+  /* Transición suave al expandir */
+  max-height: 0;
+  /* Iniciar con altura máxima de 0 */
 }
 
 .parallax-section {
@@ -566,8 +627,10 @@ h4{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('./img/image.webp');/* Cambia esto por la ruta real de la imagen */
-  height: 300px; /* Ajusta a la altura deseada */
+  background-image: url('./img/image.webp');
+  /* Cambia esto por la ruta real de la imagen */
+  height: 300px;
+  /* Ajusta a la altura deseada */
 }
 
 .parallax-section::before {
@@ -587,19 +650,22 @@ h4{
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2; /* Asegúrate de que el contenedor y su contenido estén sobre la capa azul */
+  z-index: 2;
+  /* Asegúrate de que el contenedor y su contenido estén sobre la capa azul */
 }
 
 .parallax-content h5 {
   color: white;
   text-align: center;
-  font-size: 2rem; /*qué onda ésto? */
+  font-size: 2rem;
+  /*qué onda ésto? */
   margin: 0;
   padding: 1rem;
-  z-index: 2; /* Asegúrate de que el texto esté sobre la capa azul */
+  z-index: 2;
+  /* Asegúrate de que el texto esté sobre la capa azul */
 }
 
-.texto-sobre-transparencia{
+.texto-sobre-transparencia {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -609,19 +675,19 @@ h4{
 }
 
 #servicios .caracteristica-servicio {
-    text-align: center;
-    background-color: #ffffff;
-    width: fit-content;
-    margin: 16px;
-    border:  1px solid #00000042;
-    border-radius: 25px;
-    display: flex;
-    border-radius: 8px;
-    height: 100px;
-    padding: 0.5rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  width: fit-content;
+  margin: 16px;
+  border: 1px solid #00000042;
+  border-radius: 25px;
+  display: flex;
+  border-radius: 8px;
+  height: 100px;
+  padding: 0.5rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #servicios .nuestros-servicios-container {
@@ -637,7 +703,7 @@ h4{
 }
 
 .nuestros-servicios-cards {
-  flex: 1 0 100%; 
+  flex: 1 0 100%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -654,68 +720,68 @@ h4{
 
 @media (min-width: 768px) {
 
-  #servicios  .nuestros-servicios-texto {
-    flex: 2; 
+  #servicios .nuestros-servicios-texto {
+    flex: 2;
     margin-right: 10px;
     max-width: 33%;
-    min-height: 0; 
-    justify-content: flex-start; 
+    min-height: 0;
+    justify-content: flex-start;
   }
 
-  #servicios  .nuestros-servicios-cards {
-    flex: 3; 
+  #servicios .nuestros-servicios-cards {
+    flex: 3;
   }
 
-  #servicios  .caracteristica-servicio {
+  #servicios .caracteristica-servicio {
     padding: 0.5rem;
     flex-basis: calc(55% - 1rem);
     max-width: calc(45% - 1rem);
   }
-  
-} 
+
+}
 
 #servicios2 {
- 
- justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
+
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {
 
-#servicios2 .caracteristica-servicio{
-  padding: 0.5rem;
+  #servicios2 .caracteristica-servicio {
+    padding: 0.5rem;
     flex-basis: calc(30% - 1rem);
     max-width: calc(35% - 1rem);
+  }
+
+  #serviciosAdicionales .caracteristica-servicio {
+    padding: 0.5rem;
+    flex-basis: calc(30% - 1rem);
+    max-width: calc(35% - 1rem);
+  }
+
 }
 
-#serviciosAdicionales .caracteristica-servicio{
-  padding: 0.5rem;
-  flex-basis: calc(30% - 1rem);
-  max-width: calc(35% - 1rem);
-}
-
-}
-
-.containerbuton{
+.containerbuton {
   display: flex;
   justify-content: center;
 }
 
-#form .contact-form{
+#form .contact-form {
   max-width: 1044px;
   width: 100%;
 }
 
-#form .subtitulo-contacto{
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 42px;
-    letter-spacing: 0;
-    white-space: pre-line;
+#form .subtitulo-contacto {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 42px;
+  letter-spacing: 0;
+  white-space: pre-line;
 }
 
-#form .cuadro-correo-consulta{
+#form .cuadro-correo-consulta {
   display: flex;
   flex-direction: column;
 }
@@ -742,7 +808,6 @@ h4{
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #020d3745;
   z-index: 1;
 }
 
@@ -751,15 +816,18 @@ h4{
   position: relative;
   z-index: 2;
 }
-.footer-img{
+
+.footer-img {
   width: 440px;
 }
+
 .contact-form h2 {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -770,11 +838,13 @@ h4{
 }
 
 .contact-form .half-width {
+  flex-direction: column;
   display: flex;
   width: 100%;
 }
 
 .contact-form .half-width input {
+  width: 408px;
   flex: 1;
   margin-right: 1rem;
 }
@@ -786,7 +856,7 @@ h4{
 .contact-form button {
   color: white;
   border-radius: 8px;
-  background-color:  #0432DF;
+  background-color: #0432DF;
   border: none;
   padding: 12px 24px;
   font-family: "Poppins", sans-serif;
@@ -794,15 +864,17 @@ h4{
   font-size: 16px;
   letter-spacing: 0;
   width: 200px;
-  max-width: 200px; /* Establece el ancho máximo que deseas para el botón */
-  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total del botón */
-  display: flex; 
+  max-width: 200px;
+  /* Establece el ancho máximo que deseas para el botón */
+  box-sizing: border-box;
+  /* Incluye el relleno y el borde en el ancho total del botón */
+  display: flex;
   margin: 24px auto 0;
   justify-content: center;
 }
 
-.contact-form button:hover{
-  background-color:  #020D37;
+.contact-form button:hover {
+  background-color: #020D37;
 }
 
 form .nuestros-servicios-texto {
@@ -817,31 +889,33 @@ form p {
   color: #ffffff
 }
 
-#formulario-contacto{
+#formulario-contacto {
   margin-top: 33px;
 }
 
-  /* Estilo por defecto para los íconos: ocultos */
+/* Estilo por defecto para los íconos: ocultos */
 .navbar-links .icono-navbar {
   display: none;
 }
 
 /* Cuando navbar-links tiene la clase navbar-active, los íconos se muestran */
 .navbar-links.active .icono-navbar {
-  display: inline-block; /* O puedes usar "block" según tu diseño */
-  margin-right: 8px; /* Añade un pequeño margen para separar el ícono del texto */
+  display: inline-block;
+  /* O puedes usar "block" según tu diseño */
+  margin-right: 8px;
+  /* Añade un pequeño margen para separar el ícono del texto */
 }
 
-.mano{
+.mano {
   width: 30px;
 }
 
-#footer{
+#footer {
   background-color: #8027E0;
   padding: 60px 100px;
 }
 
-.footer-section{
+.footer-section {
   margin-bottom: 36px;
   display: flex;
   justify-content: space-between;
@@ -849,7 +923,7 @@ form p {
   flex-wrap: wrap;
 }
 
-.footer-links{
+.footer-links {
   flex-wrap: wrap;
   display: flex;
   flex-direction: column;
@@ -858,7 +932,7 @@ form p {
   padding: 0 12px;
 }
 
-.footer-links a{
+.footer-links a {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -867,33 +941,33 @@ form p {
   text-decoration: none;
 }
 
-.phone-footer{
+.phone-footer {
   display: flex;
   align-items: cent;
 }
 
-.email-footer{
+.email-footer {
   display: flex;
   align-items: flex-end;
 }
 
-.phone-footer-icon{
+.phone-footer-icon {
   width: 22px;
   margin-right: 10px;
 }
 
-.email-footer-icon{
+.email-footer-icon {
   width: 20px;
   margin-right: 10px;
 }
 
-.social-links{
+.social-links {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.social-links p{
+.social-links p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -901,28 +975,28 @@ form p {
   letter-spacing: 1px;
 }
 
-#footer .social-links p{
+#footer .social-links p {
   margin: 0px;
 }
 
-.logo-slogan-footer{
+.logo-slogan-footer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 }
 
-.logo-slogan-footer a img{
+.logo-slogan-footer a img {
   width: 260px;
 }
 
-.instagram-footer{
+.instagram-footer {
   text-decoration: none;
   display: flex;
   align-items: center;
 }
 
-.pie{
+.pie {
   color: #f1f1f1;
   border-top: 1px solid #ccc;
   margin-left: auto;
@@ -933,7 +1007,7 @@ form p {
   padding-top: 24px;
 }
 
-.desarrollado-por{
+.desarrollado-por {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -944,7 +1018,7 @@ form p {
   justify-content: space-between;
 }
 
-.desarrollado-por a{
+.desarrollado-por a {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -955,21 +1029,21 @@ form p {
 }
 
 .whatsapp-button {
-  position: fixed; 
-  bottom: 5px; 
-  right: 2px;  
-  z-index: 1000; 
+  position: fixed;
+  bottom: 5px;
+  right: 2px;
+  z-index: 1000;
 }
 
-.whatsapp-button a{
-   text-decoration: none;
+.whatsapp-button a {
+  text-decoration: none;
 }
 
 .whatsapp-content {
-/* background-color: #3dc14e;  */
+  /* background-color: #3dc14e;  */
   padding: 4px 13px;
-  border-radius: 20px; 
-  display: flex; 
+  border-radius: 20px;
+  display: flex;
   align-items: center;
   color: white;
   text-decoration: none;
@@ -985,8 +1059,9 @@ form p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 9; /* Asegúrate de que esté detrás del menú hamburguesa pero encima del contenido principal */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  /* Asegúrate de que esté detrás del menú hamburguesa pero encima del contenido principal */
   display: none;
 }
 
@@ -998,66 +1073,69 @@ form p {
   overflow: hidden;
 }
 
-#nosotros svg{
+#nosotros svg {
   width: 56px;
 }
 
-#nosotros{
+#nosotros {
   margin: 140px 100px;
 }
-  
-.copyright{
-color: #ffffff;
-font-family: "Poppins", sans-serif;
-font-weight: 300;
-font-size: 14px;
-letter-spacing: 0.5px;
+
+.copyright {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
-  
-.logo-instagram{
+
+.logo-instagram {
   width: 42px;
   margin-left: 4px;
 }
-  
-.slogan{
-  color:#fff;
+
+.slogan {
+  color: #fff;
 }
 
-.hero-text a{
+.hero-text a {
   color: white;
- text-decoration: none;
+  text-decoration: none;
 }
 
-.parallax-section ,#servicios {
+.parallax-section,
+#servicios {
   margin: 140px 100px;
 
 }
 
 @media (max-width: 768px) {
 
-  #servicios,  #nosotros {
-    margin: 120px 32px!important;
+  #servicios,
+  #nosotros {
+    margin: 120px 32px !important;
   }
 
   .parallax-content h5 {
-    font-size: 1.5rem!important; /* Tamaño del texto más pequeño para pantallas más pequeñas */
+    font-size: 1.5rem !important;
+    /* Tamaño del texto más pequeño para pantallas más pequeñas */
   }
-  
+
   .h1único {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-size: 28px;
     margin: 100px 0;
     letter-spacing: 0.5px;
-  } 
+  }
 
-  
+
   .button2 {
     font-size: 14px;
     max-width: 140px;
   }
-  
-  #nosotros .titulo-cualidad-servicio{
+
+  #nosotros .titulo-cualidad-servicio {
     margin: 28px 0 0 0;
   }
 
@@ -1065,20 +1143,20 @@ letter-spacing: 0.5px;
     font-size: 48px;
   }
 
-  .texto-sobre-transparencia{
-  font-size: 24px;
-  letter-spacing: 0.5px;
+  .texto-sobre-transparencia {
+    font-size: 24px;
+    letter-spacing: 0.5px;
   }
-  
-  .parallax-section{
+
+  .parallax-section {
     margin: 0;
   }
 
-  #form{
+  #form {
     margin: 72px 32px
   }
 
-  #form .subtitulo-contacto{
+  #form .subtitulo-contacto {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 24px;
@@ -1089,39 +1167,39 @@ letter-spacing: 0.5px;
     width: 40px;
   }
 
-  #footer{
+  #footer {
     width: auto;
     padding: 72px 32px;
   }
 
-  .instagram-footer{
+  .instagram-footer {
     text-decoration: none;
     display: flex;
     align-items: center;
   }
 
-  .footer-section{
+  .footer-section {
     margin-bottom: 40px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
- }
- 
-  .logo-slogan-footer a img{
-   width: 260px;
-   margin-bottom: 40px;
- }
+  }
 
-  .footer-links{
-   flex-wrap: wrap;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   padding: 0px;
-   margin-bottom: 40px;
- }
+  .logo-slogan-footer a img {
+    width: 260px;
+    margin-bottom: 40px;
+  }
 
-  .footer-links a{
+  .footer-links {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin-bottom: 40px;
+  }
+
+  .footer-links a {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -1130,11 +1208,11 @@ letter-spacing: 0.5px;
     text-decoration: none;
   }
 
-  .phone-footer{
+  .phone-footer {
     margin-bottom: 4px;
   }
 
-  .desarrollado-por{
+  .desarrollado-por {
     color: #ffffff;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -1144,11 +1222,11 @@ letter-spacing: 0.5px;
     flex-direction: column;
   }
 
-  .desarrollado-por a{
+  .desarrollado-por a {
     margin: 0px;
   }
 
-  .pie{
+  .pie {
     border-top: 1px solid #ccc;
     display: flex;
     flex-wrap: wrap;
@@ -1156,24 +1234,48 @@ letter-spacing: 0.5px;
     margin-top: 56px;
   }
 }
+
 .pupe-img img {
   width: 620px;
-  bottom: 0;}
+  bottom: 0;
+}
+#formulario-contacto {
+  padding-bottom: 44px;
+  background-color: mediumvioletred;
+  padding-top: 28px;
+}
+
 @media (max-width: 768px) {
-  .hero-image {justify-content: center};
-  .pupe-img img{
+
+  #formulario-contacto {
+    padding-bottom: 144px;
+    background-color: mediumvioletred;
+    padding-top: 218px;
+}
+  .hero-image {
+    justify-content: center
+  }
+
+  ;
+
+  .pupe-img img {
     position: relative;
   }
+
   .h1único {
     margin: 20px 0px;
   }
+
   .pupe-img img {
     width: 400px;
-    bottom: 0;}
+    bottom: 0;
+  }
+
   .hero-image .hero-text {
     display: flex;
-    margin-top: -588px;}
-  
+    margin-top: -588px;
+  }
+
   .titulo-cualidad-servicio {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
@@ -1190,45 +1292,57 @@ letter-spacing: 0.5px;
     font-size: 16px;
     letter-spacing: 0;
   }
-  
+
   .contact-form .half-width input {
     margin-right: 0;
     margin-bottom: 1rem;
   }
+
   .contact-form .half-width {
     flex-direction: column;
   }
+
   .hero-image {
     background-size: auto;
   }
 }
 
+
+
 #servicios .caracteristica-servicio {
-  cursor: pointer; /* Cambia el cursor a una mano para indicar clickeabilidad */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la transición del efecto */
+  cursor: pointer;
+  /* Cambia el cursor a una mano para indicar clickeabilidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Suaviza la transición del efecto */
 }
 
 #servicios .caracteristica-servicio:hover {
   color: #F59E00;
-  transform: scale(1.05); /* Hace el elemento ligeramente más grande */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para resaltar */
+  transform: scale(1.05);
+  /* Hace el elemento ligeramente más grande */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* Añade una sombra para resaltar */
 }
+
 .email-footer-icon {
   width: 20px;
   margin-right: 10px;
-} 
+}
+
 .phone-footer-icon {
   width: 22px;
   margin-right: 10px;
 }
+
 .email-footer-icon {
   width: 20px;
   margin-right: 10px;
 }
 
 body {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
+
 * {
   text-decoration: none !important;
 }
