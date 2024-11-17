@@ -205,7 +205,7 @@ body{
     display: flex;
     text-align: center;
     color: white;
-    padding: 20px;
+    /* padding: 20px; */
     z-index: 222;
     flex-direction: column;
     justify-content: center;
