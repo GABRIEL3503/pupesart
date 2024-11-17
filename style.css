@@ -1241,15 +1241,20 @@ form p {
 }
 #formulario-contacto {
   padding-bottom: 44px;
-  background-color: mediumvioletred;
+  background-color: #FBE671;
   padding-top: 28px;
 }
 
 @media (max-width: 768px) {
-
+  .footer-img{
+    width: 400px;
+  }
+  .contact-form .half-width input{
+    width: auto;
+  }
   #formulario-contacto {
     padding-bottom: 144px;
-    background-color: mediumvioletred;
+    background-color: #FBE671;
     padding-top: 218px;
 }
   .hero-image {
