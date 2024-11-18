@@ -817,8 +817,8 @@ h4 {
   z-index: 2;
 }
 
-.footer-img {
-  width: 120px;
+.contacto-img{
+  width: 420px;
 }
 
 .contact-form h2 {
@@ -1244,10 +1244,17 @@ form p {
   background-color: #FBE671;
   padding-top: 28px;
 }
+.footer-img{
+  width: 120px;
+}
 
 @media (max-width: 768px) {
+
   .footer-img{
     width: 120px;
+  }
+  .contacto-img{
+    width: 368px;
   }
   .contact-form .half-width input{
     width: auto;
