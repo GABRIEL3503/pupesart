@@ -251,17 +251,18 @@ body {
   color: #1a1a1a;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 28px;
   margin: 10px 0;
   white-space: pre-line;
 }
+
 
 .button1 a {
   color: #8027E0 !important;
 }
 
 .sobremi-img {
-  width: 380px;
+  width: 38vw;
 }
 
 .button1 {
@@ -322,7 +323,7 @@ body {
 /* galeria */
 
 #gallery {
-  padding: 34px;
+  padding: 34px 180px;
 
 }
 
@@ -490,9 +491,8 @@ h4 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: -2;
-  margin: 24px 36px 56px 16px;
 }
 
 .nuestros-servicios-caracteristicas {
@@ -554,7 +554,10 @@ h4 {
   }
 
   .nuestros-servicios-texto {
-    flex-basis: 50%;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
     /* Ajusta al 50% del ancho para el texto en escritorio */
     max-width: 50%;
   }
@@ -1124,7 +1127,7 @@ form p {
   .h1único {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 18px;
     margin: 100px 0;
     letter-spacing: 0.5px;
   }
@@ -1247,8 +1250,19 @@ form p {
 .footer-img{
   width: 120px;
 }
-
+.sobremi-img {
+  width:28vw;
+}
+#nosotros {
+  margin: 140px 180px;
+}
 @media (max-width: 768px) {
+  .sobremi-img {
+    width:80vw;
+  }
+  #nosotros {
+    margin: 10px 10px;
+}
 
   .footer-img{
     width: 120px;
