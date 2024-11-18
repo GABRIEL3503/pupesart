@@ -193,6 +193,7 @@ body {
 
 /* hero-image */
 .hero-image {
+  justify-content: space-around;
   flex-wrap: wrap;
   margin-top: -22px;
   width: auto;
@@ -236,7 +237,7 @@ body {
 
 /* Estilos para los botones */
 .hero-image {
-
+  justify-content: space-around;
   display: flex;
   cursor: pointer;
   padding: 10px 20px;
