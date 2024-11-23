@@ -1114,7 +1114,12 @@ form p {
 }
 
 @media (max-width: 768px) {
-
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+}
+  #gallery {
+    padding: 34px 30px;
+}
   #servicios,
   #nosotros {
     margin: 120px 32px !important;
@@ -1373,3 +1378,9 @@ body {
 * {
   text-decoration: none !important;
 }
+
+@media (min-width: 1400px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}}
