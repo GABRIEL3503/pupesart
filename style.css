@@ -19,7 +19,9 @@ body {
 
 /* navbar */
 
-
+.instagram-frame img {
+  width:40vw;
+}
 
 .navbar {
   position: absolute;
@@ -795,6 +797,14 @@ h4 {
   white-space: pre-line;
 }
 
+
+.instagram-frame{
+  padding: 0px 182px;
+  display: flex
+;
+  flex-direction: column;
+  align-items: center;
+}
 #form .cuadro-correo-consulta {
   display: flex;
   flex-direction: column;
@@ -1273,6 +1283,12 @@ form p {
   margin: 140px 180px;
 }
 @media (max-width: 768px) {
+
+  .instagram-frame img{
+    width: 80vw;
+  }
+  .instagram-frame{
+    padding: 0px 40px;}
   .sobremi-img {
     width:80vw;
   }
