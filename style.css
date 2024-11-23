@@ -40,7 +40,7 @@ body {
 .navbar-links {
   /* padding-right: 55px; */
   display: flex;
-  font-family: "Poppins", sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 500;
   font-size: 19px;
   letter-spacing: 0.5px;
@@ -247,10 +247,13 @@ body {
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
+.hero-text p{
+  font-family: "Red Hat Display", sans-serif;
+}
 
 .h1único {
   color: #1a1a1a;
-  font-family: "Poppins", sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   font-weight: 600;
   font-size: 28px;
   margin: 10px 0;
@@ -265,6 +268,14 @@ body {
 .sobremi-img {
   width: 38vw;
 }
+.filter-container button{
+  font-family: "Bricolage Grotesque", sans-serif;
+
+}
+.parallax-content h5{
+  font-family: "Bricolage Grotesque", sans-serif;
+
+}
 
 .button1 {
   color: #8027E0 !important;
@@ -272,7 +283,7 @@ body {
   background-color: white;
   border: none;
   padding: 12px 140px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.5px;
@@ -477,7 +488,7 @@ h4 {
 
 .titulo-nuestros-servicios {
   text-decoration: none !important;
-  font-family: "Poppins", sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 58px;
@@ -489,7 +500,7 @@ h4 {
 
 .subtitulo-nuestros-servicios {
   color: #8027E0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -778,7 +789,6 @@ h4 {
 }
 
 #form .subtitulo-contacto {
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 42px;
   letter-spacing: 0;
@@ -1166,7 +1176,7 @@ form p {
   }
 
   #form .subtitulo-contacto {
-    font-family: "Poppins", sans-serif;
+    font-family: "Red Hat Display", sans-serif;
     font-weight: 600;
     font-size: 24px;
     letter-spacing: 0.5px;
