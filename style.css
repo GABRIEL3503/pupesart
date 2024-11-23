@@ -800,7 +800,7 @@ h4 {
 
 .instagram-frame{
   background-color: #8027E0;
-  padding: 0px 182px;
+  padding: 80px 182px;
   display: flex
 ;
   flex-direction: column;
@@ -879,12 +879,9 @@ h4 {
 }
 
 .contact-form button {
-  color: white;
   border-radius: 8px;
-  background-color: #0432DF;
   border: none;
   padding: 12px 24px;
-  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0;
@@ -898,9 +895,7 @@ h4 {
   justify-content: center;
 }
 
-.contact-form button:hover {
-  background-color: #020D37;
-}
+
 
 form .nuestros-servicios-texto {
   max-width: 100%;
@@ -914,9 +909,6 @@ form p {
   color: #ffffff
 }
 
-#formulario-contacto {
-  margin-top: 33px;
-}
 
 /* Estilo por defecto para los íconos: ocultos */
 .navbar-links .icono-navbar {
@@ -1136,6 +1128,8 @@ form p {
 
 @media (max-width: 768px) {
   .gallery {
+    grid-auto-rows: 120px;
+
     grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
 }
   #gallery {
@@ -1289,7 +1283,7 @@ form p {
     width: 80vw;
   }
   .instagram-frame{
-    padding: 0px 40px;}
+    padding: 40px 40px;}
   .sobremi-img {
     width:80vw;
   }
