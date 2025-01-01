@@ -63,8 +63,17 @@ body {
 .navbar-toggle {
   display: none;
 }
-
+.desc-bottom .gslide-image img, .desc-top .gslide-image img{
+  width: 30vw!important;
+  height: 60%;
+}
 @media (max-width: 768px) {
+  .glightbox-mobile .glightbox-container .gslide-description{
+    overflow: visible;
+  }
+  .desc-bottom .gslide-image img, .desc-top .gslide-image img{
+    width: 90vw!important;
+  }
   .navbar {
     position: absolute;
     width: 88%;
@@ -387,13 +396,49 @@ body {
 
 /* Descripción interna de las tarjetas */
 .gdesc-inner {
-  width: 30%;
+  width: 100%;
   font-size: 21px;
   color: white;
-  background-color: black;
-  margin-top: -168px;
+  background-color: rgb(16 16 16);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
+/* Ajustes específicos para móvil */
+@media (max-width: 768px) {
+  .gdesc-inner {
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .gslide-description {
+    position: relative !important;
+  }
+
+  .gslide-desc {
+    position: relative !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .glightbox-container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .gslide-image {
+    max-height: 80vh;
+  }
+}
+
+.glightbox-container .ginner-container {
+height: 100%!important;}
 /* Ajustes de estilo específicos para GLightbox */
 .glightbox-clean .gslide-description {
   background-color: transparent;
